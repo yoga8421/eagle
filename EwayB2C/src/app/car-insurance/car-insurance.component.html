@@ -1,0 +1,258 @@
+<div class="header">
+    <img class="eagleLogo" src="assets/images/eagleLogo.webp" alt="ss">
+    <nav>
+      <a href="#">Overview</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">About</a>
+    </nav>
+    <button class="sign-in">Login</button>
+  </div>
+
+  
+  <div class="card">
+    <section class="content">
+      <img class="person" src="assets/images/person.webp" alt="Image of Zada">
+     
+      <p class="text-p1">
+        <b>Hi! I’m Zada, get your quote within 1 minute.</b><br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+      </p>
+    </section>
+  </div> <br>
+  
+  
+
+  <!-- <div class="card mt-4">
+    <div class="card-header">
+      <h3>Vehicle Information</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmitVehicle()" [formGroup]="vehicleForm">
+        <div class="form-group">
+          <label for="motorUsage">Motor Usage</label>
+          <input id="motorUsage" type="text" class="form-control" formControlName="motorUsage" />
+        </div>
+
+        <div class="form-group">
+          <label for="bodyType">Body Type</label>
+          <input id="bodyType" type="text" class="form-control" formControlName="bodyType" />
+        </div>
+
+        <div class="form-group">
+          <label for="make">Make</label>
+          <input id="make" type="text" class="form-control" formControlName="make" />
+        </div>
+
+        <div class="form-group">
+          <label for="model">Model</label>
+          <input id="model" type="text" class="form-control" formControlName="model" />
+        </div>
+
+        <div class="form-group">
+          <label for="manufactureYear">Manufacture Year</label>
+          <input id="manufactureYear" type="number" class="form-control" formControlName="manufactureYear" />
+        </div>
+
+        <div class="form-group">
+          <label for="engineCapacity">Engine Capacity (in CC)</label>
+          <input id="engineCapacity" type="number" class="form-control" formControlName="engineCapacity" />
+        </div>
+
+        <div class="form-group">
+          <label for="fuelType">Fuel Type</label>
+          <input id="fuelType" type="text" class="form-control" formControlName="fuelType" />
+        </div>
+
+        <div class="form-group">
+          <label for="claimType">Claim Type</label>
+          <input id="claimType" type="text" class="form-control" formControlName="claimType" />
+        </div>
+
+        <div class="form-group">
+          <label for="vehicleSumInsured">Vehicle Sum Insured</label>
+          <input id="vehicleSumInsured" type="number" class="form-control" formControlName="vehicleSumInsured" />
+        </div>
+
+        <div class="form-group">
+          <label for="renewYN">Renew Insurance?</label>
+          <div>
+            <label for="renewYNYes">Yes</label>
+            <input id="renewYNYes" type="radio" formControlName="renewYN" value="yes" />
+            <label for="renewYNNo">No</label>
+            <input id="renewYNNo" type="radio" formControlName="renewYN" value="no" />
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="">Submit</button>
+
+        </div> -->
+        
+
+
+        <div class="container">
+        <div class="card mt-4">
+          <div class="card-header">
+            <h3>Vehicle Information</h3>
+          </div>
+          
+          <!-- <div class="toggle-buttons"> -->
+            
+            <!-- <button (click)="('comprehensive')" >Comprehensive</button>
+            <button (click)="('thirdParty')" >Third Party</button> -->
+          <!-- </div> -->
+          <div class="card-body">
+            <form (ngSubmit)="onSubmitVehicle()" [formGroup]="vehicleForm">
+              <div class="form-group">
+                <ng-container *ngFor="let entry of typeList">
+                  <input class="radiobutton" type="radio" [id]="entry.Code" name="insuranceType" [value]="entry.Code" formControlName="insuranceType">
+                  <label [for]="entry.Code">{{entry.CodeDesc}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </ng-container>
+              </div><br>
+              <div class="form-group">
+                <label for="motorUsage">Motor Usage</label>
+                <ng-select [items]="motorUsageList" bindLabel="CodeDesc" (change)="onChangeMotorUsage('direct');getMotorTypeList('change',null,null);" bindValue="Code" placeholder="Select MotorUsage" formControlName="motorUsage">
+                </ng-select>
+              </div>
+        
+              <div class="form-group">
+                <label for="bodyType">Body Type</label>
+                <ng-select [items]="bodytypeList" bindLabel="CodeDesc" bindValue="Code" (change)="onBodyTypeChange('change')" placeholder="Select BodyType" formControlName="bodyType">
+                </ng-select>
+              </div>
+        
+              <div class="form-group">
+                <label for="make">Make</label>
+                <ng-select [items]="makeList" bindLabel="CodeDesc" bindValue="Code" placeholder="Select Make" (change)="getModelList('change')" formControlName="make">
+                </ng-select>
+              </div>
+        
+              <div class="form-group">
+                <label for="model">Model</label><br>
+                <ng-container *ngIf="checkModelDropdownHide()">
+                  <ng-select [items]="modelList" bindLabel="CodeDesc" bindValue="Code" placeholder="Select Model" formControlName="model">
+                  </ng-select>
+                </ng-container>
+                
+                <ng-container *ngIf="checkModelFieldHide()">
+                  <input  id="engineCapacity" type="text" class="form-control" formControlName="modelDesc" />
+                </ng-container>
+              
+            </div>
+        
+              <div class="form-group">
+                <label for="manufactureYear">Manufacture Year</label>
+                <ng-select [items]="yearList" bindLabel="CodeDesc" bindValue="Code" placeholder="Select Year" formControlName="manufactureYear">
+                </ng-select>
+              </div>
+        
+              <div class="form-group">
+                <label for="engineCapacity">Engine Capacity (in CC)</label>
+                <input id="engineCapacity" type="number" class="form-control" formControlName="engineCapacity" />
+              </div>
+        
+              <div class="form-group">
+                <label for="fuelType">Fuel Type</label>
+                <ng-select [items]="fuelTypeList" bindLabel="CodeDesc" bindValue="Code" placeholder="Select FuelType" formControlName="fuelType">
+                </ng-select>
+              </div>
+              <div class="form-group">
+                <label for="license">License Number</label><br>
+                <input id="drivingexp" type="number" class="form-control" formControlName="license" />
+              </div>
+              <div class="form-group">
+                <label for="drivingexp">Driving Experience</label>
+                <input id="drivingexp" type="number" class="form-control" formControlName="drivingexp" />
+              </div>
+             
+              <div class="form-group">
+                  <label for="claimType">Claim Type</label>
+                  <ng-select [items]="claimTypeList" bindLabel="CodeDesc" bindValue="Code" placeholder="Select ClaimType" formControlName="claimType">
+                  </ng-select>
+              </div>
+              <div class="form-group">
+                <label for="vehicleSumInsured">Vehicle Sum Insured</label>
+                <input id="vehicleSumInsured" type="number" class="form-control" formControlName="vehicleSumInsured" />
+              </div>
+        
+              <div class="form-group">
+                <label for="renewYN">Renew Insurance?</label>
+                <div class="toggle-buttons">
+                  <button class="toggle-button yes">Yes</button>
+                  <button class="toggle-button no">No</button>
+                </div>
+              </div>
+            
+            
+            <button (click)="onContinue()" class="continue-button">Continue</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Customer Form Card -->
+      <div *ngIf="showCustomerInfo" class="customer-info-popup">
+        <div class="popup-content">
+<div class="card">
+  <div class="card-body">
+    <h3>Customer Information</h3>
+    <form (ngSubmit)="onSubmitCustomer()" [formGroup]="customerForm">
+      <div class="form-group">
+        <label for="customerName">Name</label>
+        <input id="customerName" type="text" class="form-control" formControlName="customerName" />
+      </div>
+
+      
+      <div class="form-group">
+        <label for="mobileNo">Mobile Code</label>
+        <ng-select [items]="mobileCodeList" bindLabel="CodeDesc" bindValue="Code" placeholder="Select" formControlName="mobileCode">
+        </ng-select>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="customerEmail">Email</label>
+        <input id="customerEmail" type="email" class="form-control" formControlName="customerEmail" />
+      </div> -->
+    
+      <div class="form-group">
+        <label for="mobileNo">Mobile No</label>
+        <input id="mobileNo" type="text" class="form-control" formControlName="mobileNo" />
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="gender">Gender</label>
+        <input id="gender" type="text" class="form-control" formControlName="gender" />
+      </div> -->
+      <div class="form-group">
+      <label for="gender">Gender:</label>
+<select id="gender" name="gender">
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+  <option value="nonbinary">Non-Binary</option>
+  <option value="prefer_not_to_say">Prefer not to say</option>
+  <option value="other">Other</option>
+</select>
+      </div>
+
+      
+
+      <div class="form-group">
+        <label for="dob">DOB</label>
+        <input id="dob" type="date" class="form-control" formControlName="dob" />
+      </div>
+
+      <div class="form-group">
+        <label for="occupation">Occupation</label>
+        <ng-select [items]="occupationList" bindLabel="CodeDesc" bindValue="Code" placeholder="Select Occupation" formControlName="occupation">
+        </ng-select>
+      </div>
+
+      <!-- Add other customer fields as needed -->
+      <button class="continue-button" (click)=" goToCarInsurancePremium()" type="submit">Submit</button>
+      <button class="continue-button" type="button" (click)="closePopup()">Close</button>
+    </form>
+  </div>
+</div>
+
+    
+        

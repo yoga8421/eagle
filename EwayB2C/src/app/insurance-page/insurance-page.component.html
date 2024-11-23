@@ -1,0 +1,20 @@
+<div class="header">
+  <img class="eagleLogo" src="assets/images/eagleLogo.webp" alt="ss">
+  <nav>
+    <a href="#">Overview</a>
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+    <a href="#">About</a>
+  </nav>
+  <button class="sign-in" (click)="navigateToLogin()">Login</button>
+</div>
+
+<section class="product-selection">
+  <h2 class="h2-text">Select a product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to start</h2>
+  <p class="p-text">Embark on a Boundless Exploration of Innovation with Our Diverse Range of Products, Elevating Your Journey to
+    Unveil New Horizons and Endless Possibilities.</p>
+  </section>
+  <div class="card-container">
+    <app-insurance-card class="sub-card-container" *ngFor="let product of products" [product]="product">
+    </app-insurance-card>
+  </div>

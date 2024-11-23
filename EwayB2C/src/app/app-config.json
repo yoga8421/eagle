@@ -1,0 +1,12 @@
+{
+        "ApiUrl1": "http://192.168.1.42:8084/",
+         "MotorApiUrl": "http://192.168.1.42:8085/",
+         "CommonApiUrl": "http://192.168.1.42:8086/",
+         "CustomCommonApiUrl": "http://192.168.1.42:8086/",
+         "ExcelUrl": "http://192.168.1.42:8084/",
+         "PreExceptionUrl":"https://madison.revioncloud.com/WhatsAppChatApi/",
+         "CustomApiUrl1": "http://192.168.1.42:8084/",
+        "ReInsurance":"https://apps.alliance.co.tz/EwayAdminApiLive/",
+        "Request URL": "http://192.168.1.42:8086/otp/generate/"
+  }
+ 

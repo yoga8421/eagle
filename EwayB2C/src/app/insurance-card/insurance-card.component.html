@@ -1,0 +1,7 @@
+<div class="card" [ngClass]="product.type + '-card'">
+  <img [src]="product.img" [alt]="product.name">
+  <h3>{{ product.name }}</h3>
+  <p>{{ product.description }}</p>
+  <button (click)="redirectToCarInsurance()">Buy Policy</button>
+
+  </div>

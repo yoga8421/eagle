@@ -1,0 +1,251 @@
+/* .card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* width: 250px; */
+    /* padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease; */
+    /* border: 2px solid blue; */
+/* 
+    display: grid;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+} */
+
+/* Background colors for specific cards */
+/* .motorcycle-card { */
+    /* background-color: #e0e7ff; */
+    /* border: 2px solid salmon; */
+/* }
+
+.motorcycle-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.car-card {
+    background-color: #fef3c7;
+}
+
+.car-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.home-card {
+    background-color: #f0f4f8;
+}
+
+.home-card img {
+    width: auto;
+    height: 40vh;
+    margin-bottom: 35px;
+}
+
+.health-card {
+    background-color: #e0f7fa;
+}
+
+.health-card img {
+    width: auto;
+    height: 40vh;
+    margin-bottom: 35px;
+} */
+
+/* Responsive styling */
+/* @media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+} */
+
+
+
+/* Card Base Style */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Specific Card Types */
+  .motorcycle-card {
+    background-color: #e0e7ff;
+  }
+  
+  .motorcycle-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .car-card {
+    background-color: #f0f4f8;
+  }
+  
+  .car-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  .home-card {
+    background-color: #f0f4f8;
+  }
+  
+  .home-card img {
+    width: auto;
+    height: 40vh;
+    margin-bottom: 35px;
+  }
+  
+  .health-card {
+    background-color: #e0f7fa;
+  }
+  
+  .health-card img {
+    width: auto;
+    height: 40vh;
+    margin-bottom: 35px;
+  }
+  
+  /* Responsive Breakpoints */
+  
+  /* Mobile (max-width: 599px) */
+  @media (max-width: 599px) {
+    .card {
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+  
+    .card h3 {
+      font-size: 1rem;
+    }
+  
+    .card p {
+      font-size: 0.8rem;
+    }
+  
+    button {
+      padding: 8px 16px;
+      font-size: 0.8rem;
+    }
+  
+    .motorcycle-card img,
+    .car-card img {
+      width: 80px; /* Reduce image size for smaller screens */
+      margin-bottom: 10px;
+    }
+  
+    .home-card img,
+    .health-card img {
+      height: 30vh; /* Reduce image height for better fit on mobile */
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Tablet (600px - 1023px) */
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .card {
+      padding: 18px;
+    }
+  
+    .card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .card p {
+      font-size: 0.85rem;
+    }
+  
+    button {
+      padding: 9px 18px;
+      font-size: 0.85rem;
+    }
+  
+    .motorcycle-card img,
+    .car-card img {
+      width: 90px;
+      margin-bottom: 12px;
+    }
+  
+    .home-card img,
+    .health-card img {
+      height: 35vh;
+      margin-bottom: 25px;
+    }
+  }
+  

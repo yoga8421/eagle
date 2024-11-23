@@ -1,0 +1,57 @@
+<div class="flex justify-content-end mb-4">
+  <p-button icon="pi pi-list" class="mr-3" [styleClass]="viewType =='list' ? '':'p-button-outlined'" (click)="viewType='list'" severity="success "></p-button>
+  <p-button icon="pi pi-table" [styleClass]="viewType =='table'? '':'p-button-outlined'" (click)="viewType='table'"  severity="success "></p-button>
+</div>
+<div *ngIf="viewType == 'list' then cardView else tableView"></div>
+<ng-template #tableView>
+  <p-table *ngIf="values.length > 0 else noData" [value]="values" [tableStyle]="{'min-width':'50rem'}" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let column of columns" [pSortableColumn]="column">
+              {{column.label}} <p-sortIcon [field]="column"></p-sortIcon>
+            </th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-value>
+      <tr>
+        <td *ngFor="let column of columns">{{value?.[column.key]}}</td>
+        <td>
+          <span class="p-buttonset">
+            <button *ngFor="let action of actions" 
+              pButton pRipple 
+              [icon]="action.icon" 
+              [routerLink]="[action.routerLink]" 
+              class="p-button-outlined">
+            </button>
+          </span>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <ng-template #noData><p class="text-center">No Data Available</p></ng-template>
+</ng-template>
+<ng-template #cardView>
+  <p-dataView #dv [value]="values" [rows]="5" [paginator]="true" layout="grid">
+    <ng-template pTemplate="gridItem" let-value>
+        <div class="card mr-4 w-25rem">
+            <div class="grid">
+                <div *ngFor="let column of columns;let index = index" class="w-11rem">
+                    <b>{{column.label}}</b>
+                    <p>{{ value?.[column.key] }}</p>
+                </div>
+                <div>
+                    <span class="p-buttonset">
+                        <button *ngFor="let action of actions" 
+                          pButton pRipple 
+                          [icon]="action.icon" 
+                          [routerLink]="[action.routerLink]" 
+                          class="p-button-outlined">
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+  </p-dataView>
+</ng-template>

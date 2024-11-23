@@ -1,0 +1,28 @@
+<div class="maan-grid customer-grid maan-grid-column-1">
+    <div class="maan-grid-item">
+        <div class="maan-grid-item-title">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <span class="mx-1">
+                      <i class="fas fa-document mx-1"></i>
+                  </span> {{title}}
+                </div>
+                <div>
+                    <ng-container>
+
+                    </ng-container>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="maan-grid-item-body">
+            <div class="text-center">
+                <img [src]="imageUrl" width="600px">
+            </div>
+            <div class="text-center mt-2">
+                <button class="btn btn-danger" (click)="close()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

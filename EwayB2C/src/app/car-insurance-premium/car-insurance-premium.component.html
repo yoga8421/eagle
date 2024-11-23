@@ -1,0 +1,158 @@
+<div class="header">
+    <img class="eagleLogo" src="assets/images/eagleLogo.webp" alt="ss">
+    <nav>
+      <a href="#">Overview</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">About</a>
+    </nav>
+    <button class="sign-in">Logout</button>
+  </div>
+
+
+  <div class="card">
+    <section class="content">
+      <img class="person" src="assets/images/person.webp" alt="Image of Zada">
+     
+      <p class="text-p1">
+        <b>Hi! I’m Zada, get your quote within 1 minute.</b><br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+      </p>
+    </section>
+  </div><br>
+
+
+
+  
+
+<div class="insurance-container">
+  <!-- Premium Details Section -->
+  <div class="premium-details section">
+    <h2>Premium Details</h2>
+    <ng-container *ngFor="let menu of vehicleDetailsList;let i = index">
+      <ng-container *ngFor="let cover of menu.CoverList">
+        <ng-container *ngIf="((cover.isSelected=='D' && cover.CoverageType!='A') && !endorseCovers) ||  checkCoverSelection(menu,cover)">
+          <div class="detail-box">
+              <div class="box-header">{{cover.CoverName}}</div>
+              <p>Sum Insured - {{cover.SumInsured}}</p>
+              <p>Premium After Discount - {{cover.PremiumAfterDiscount}}</p>
+              <p><strong>Grand Total</strong>&nbsp;&nbsp;{{cover.PremiumIncludedTax}}&nbsp;<span class="text-base">( {{currencyCode}} )</span></p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+    
+    
+  </div>
+
+  <!-- Add-on Covers Section -->
+  <div class="add-on section">
+    <h2>Add-on Covers</h2>
+    <ng-container *ngFor="let menu of vehicleDetailsList;let i = index">
+      <ng-container *ngFor="let cover of menu.CoverList">
+        <ng-container *ngIf="((cover.isSelected!='D' && cover.CoverageType!='A')) && !checkCoverSelection(menu,cover)">
+            <div class="addon-item">
+              <input type="checkbox" [id]="cover.CoverName" [checked]="canbeChecked(cover)" (change)="onSelectCover(cover,$event.target.checked,menu.Vehicleid,menu,'coverList','change')" />
+              <label [for]="cover.CoverName">{{ cover.CoverName }}</label>
+              <span class="addon-price">{{ cover.PremiumIncludedTax }}&nbsp; <span class="text-base">( {{currencyCode}} )</span></span>
+            </div>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+   
+  </div>
+
+  <!-- Total Premium Section -->
+  <div class="total-premium section">
+    <h2>Total Premium</h2>
+    <div class="premium-box">
+      <p><strong>Premium Amount:</strong>{{totalPremium}}&nbsp;({{currencyCode}})</p>
+      <p><strong>Policy Number:</strong> EAG-MOT-06172</p>
+      <p><strong>Valid Thru:</strong> 15/11/2025</p>
+    </div>
+    <!-- <button class="buy-policy-btn">Buy Policy</button> -->
+    <button class="buy-policy-btn" mat-raised-button color="primary" (click)="openPopup()" >
+      Buy Policy
+    </button>
+  </div>
+</div>
+
+
+
+
+<!-- OTP Popup -->
+<div *ngIf="isPopupVisible" class="otp-popup-backdrop">
+  <div class="otp-popup">
+    <h2 class="title">OTP Verification</h2>
+    <div>
+      <small>code has been send to {{lastMobileNo}}</small>
+    </div>
+    <p class="subtitle">
+      To buy the policy, please enter the OTP sent to 
+  
+      <span class="phone-number">889465455</span>
+      <span class="edit">(edit)</span>
+    </p>
+    
+    <div class="otp-inputs">
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+    </div><br>
+    <button   (click)="onVerifyClick()" class="buy-policy-btn"  >
+      Verify & Submit
+    </button>
+  </div>
+</div>
+
+
+
+
+
+<!-- OTP Popup
+<div *ngIf="isPopupVisible" class="otp-popup-backdrop">
+  <div class="otp-popup">
+    <h2 class="title">OTP Verification</h2>
+    <p class="subtitle">
+      To buy the policy, please enter your mobile number and the OTP.
+    </p> -->
+
+    <!-- Mobile Number Input -->
+    <!-- <div class="mobile-input">
+      <label for="mobile">Mobile Number:</label>
+      <input
+        type="text"
+        id="mobile"
+        maxlength="10"
+        [(ngModel)]="mobileNumber"
+        placeholder="Enter your mobile number"
+        class="mobile-box"
+      />
+    </div> -->
+
+    <!-- OTP Input Fields -->
+    <!-- <div class="otp-inputs" *ngIf="isOtpRequested">
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+      <input type="text" maxlength="1" class="otp-box" />
+    </div> -->
+
+    <!-- Buttons -->
+    <!-- <div *ngIf="!isOtpRequested">
+      <button mat-raised-button color="primary" (click)="requestOtp()">
+        Request OTP
+      </button>
+    </div>
+    <div *ngIf="isOtpRequested">
+      <button mat-raised-button color="primary" (click)="closePopup()">
+        Verify & Submit
+      </button>
+    </div>
+  </div>
+</div> -->

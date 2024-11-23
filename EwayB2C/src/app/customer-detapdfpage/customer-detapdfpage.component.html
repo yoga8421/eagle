@@ -1,0 +1,151 @@
+<div class="container">
+    <!-- Header -->
+    <header class="header">
+        <img class="eagleLogo" src="assets/images/eagleLogo.webp" alt="ss">
+      <nav class="menu">
+        <a href="#">Overview</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">About</a>
+      </nav>
+      <div class="language">
+        <select>
+          <option>English</option>
+          <option>French</option>
+        </select>
+    </div>
+        <!-- <button class="btn-logout">Log out</button> -->
+        <button class="sign-in">Login</button>
+      
+    </header>
+
+<!-- Banner -->
+<div class="banner">
+    <h3>Please provide your customer details within 3 min</h3>
+    <p>
+      Ref. No: <span>EAG-MOT-06063</span> |
+      Make: <span>AUDI</span> |
+      Model: <span>A3 AUTO</span> |
+      Policy Days Count: <span>365 days</span> |
+      Total Premium: <span>10,801 MUR</span>
+    </p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="tabs">
+    <!-- <li><a href="#home">Home</a></li> -->
+    <li><a href="#Customer Info"></a></li>
+    <!-- <li><a href="Vehicle Details"></a></li>
+    <li><a href="Driver Details"></a></li>
+    <li><a href="Upload Documents"></a></li>
+    <li><a href="Payment Method"></a></li> -->
+    <li >Vehicle Details</li>
+    <li >Driver Details</li>
+    <li >Upload Documents</li>
+    <li >Payment Method</li>
+  </ul>
+
+  <div class="form-container">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <!-- Personal Information Section -->
+      <mat-card>
+        <h3>Personal Information</h3>
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <mat-select formControlName="title">
+            <mat-option *ngFor="let option of titles" [value]="option">{{ option }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Occupation</mat-label>
+          <input matInput formControlName="occupation" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Identity Type</mat-label>
+          <mat-select formControlName="identityType">
+            <mat-option *ngFor="let type of identityTypes" [value]="type">{{ type }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Country Code</mat-label>
+          <input matInput formControlName="countryCode" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="mobile" type="tel" />
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Email ID</mat-label>
+          <input matInput formControlName="email" type="email" />
+        </mat-form-field>
+      </mat-card>
+  
+      <!-- Address Details Section -->
+      <mat-card>
+        <h3>Address Details</h3>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Country</mat-label>
+          <mat-select formControlName="country">
+            <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Region</mat-label>
+          <input matInput formControlName="region" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>District</mat-label>
+          <input matInput formControlName="district" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>P.O Box</mat-label>
+          <input matInput formControlName="poBox" />
+        </mat-form-field>
+      </mat-card>
+  
+      <!-- Additional Information Section -->
+      <mat-card>
+        <h3>Additional Information</h3>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Preferred Notification</mat-label>
+          <mat-select formControlName="notification">
+            <mat-option value="SMS">SMS</mat-option>
+            <mat-option value="Email">Email</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Business Type</mat-label>
+          <mat-select formControlName="businessType">
+            <mat-option value="Low">Low</mat-option>
+            <mat-option value="Medium">Medium</mat-option>
+            <mat-option value="High">High</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Tax Exempted</mat-label>
+          <mat-select formControlName="taxExempted">
+            <mat-option value="Yes">Yes</mat-option>
+            <mat-option value="No">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card>
+  
+      <!-- Submit Button -->
+      <button mat-raised-button color="primary" type="submit">Proceed</button>
+    </form>
+  </div>
+  
