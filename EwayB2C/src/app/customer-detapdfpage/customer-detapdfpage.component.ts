@@ -7,36 +7,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./customer-detapdfpage.component.scss']
 })
 export class CustomerDetapdfpageComponent implements OnInit {
-  registrationForm: FormGroup;
-  titles = ['Mr', 'Ms', 'Mrs', 'Dr'];
-  identityTypes = ['National ID', 'Passport', 'Driving License'];
-  countries = ['Tanzania', 'Kenya', 'Uganda', 'Rwanda'];
-  
+  insuranceForm: FormGroup;
+
   constructor(private fb: FormBuilder) {
-    this.registrationForm = this.fb.group({
+    this.insuranceForm = this.fb.group({
       title: ['', Validators.required],
-      occupation: ['', Validators.required],
+      accountType: ['Default', Validators.required], // Default value
+      customerName: ['', Validators.required],
+      code: ['', Validators.required],
+      mobileNo: ['', Validators.required],
       identityType: ['', Validators.required],
-      countryCode: ['255', Validators.required],
-      mobile: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      idNumber: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      country: ['', Validators.required],
-      region: ['', Validators.required],
-      district: ['', Validators.required],
-      poBox: ['', Validators.required],
-      notification: ['SMS', Validators.required],
-      businessType: ['Low', Validators.required],
-      taxExempted: ['No', Validators.required],
+      policyStartDate: ['', Validators.required],
+      policyEndDate: ['', Validators.required],
+      currency: ['', Validators.required],
+      exchangeRate: ['', Validators.required],
+      promoCode: ['No', Validators.required]
     });
   }
 
   ngOnInit(): void {}
 
   onSubmit(): void {
-    if (this.registrationForm.valid) {
-      console.log('Form Submitted', this.registrationForm.value);
+    if (this.insuranceForm.valid) {
+      console.log('Form Submitted', this.insuranceForm.value);
     } else {
-      console.log('Form is invalid');
+      console.error('Form Invalid');
     }
   }
 }

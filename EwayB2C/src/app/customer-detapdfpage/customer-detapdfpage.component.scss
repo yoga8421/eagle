@@ -1,158 +1,217 @@
-/* Container */
+.header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 1, 0, 0.1);
+}
+
+.eagleLogo {
+  width: 120px;
+  height: auto;
+}
+
+.header nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.header nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.header nav a:hover {
+  color: #007BFF;
+}
+
+.header .sign-in {
+  background-color: #00c0ff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header .sign-in:hover {
+  background-color: #008fb3;
+}
+/* Main Container */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Fieldsets */
+fieldset {
+  border: none;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+legend {
+  font-size: 18px;
+  font-weight: bold;
+  color:#00c7c7;;
+  margin-bottom: 10px;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+/* Account Type Toggle */
+.account-type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.account-type label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #555;
+}
+
+.toggle-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.toggle-buttons input[type='radio'] {
+  margin-right: 5px;
+}
+
+.toggle-buttons label {
+  cursor: pointer;
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.toggle-buttons input[type='radio']:checked + label {
+  background-color: #00c7c7;
+  color: white;
+  border-color: #00c7c7;
+}
+
+
+input,
+select {
+  height: 40px;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus,
+select:focus {
+  border: 1px solid #00c7c7;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.2);
+}
+
+/* Radio Buttons */
+.form-group div {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Buttons */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Back Button */
+.back-button {
+  background-color: #00c7c7;
+  color: white;
+}
+
+.back-button:hover {
+  background-color: #00c7c7;
+  box-shadow: 0 4px 6px rgba(211, 47, 47, 0.3);
+}
+
+/* Proceed Button */
+.proceed-button {
+  background-color: #00c7c7;
+  color: white;
+}
+
+.proceed-button:hover {
+  background-color:#00c7c7;
+  box-shadow: 0 4px 6px rgba(56, 142, 60, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
   }
-  
-  /* Header */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 2px solid #ddd;
+
+  .form-actions {
+    flex-direction: column;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    color: #007bff;
-    font-weight: bold;
-  }
-  
-  .menu a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .menu a:hover {
-    color: #007bff;
-  }
-  
-  .language select {
-    margin-right: 1rem;
-  }
-  
-  .btn-logout {
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-logout:hover {
-    background-color: #ff0000;
-  }
-  
-  /* Banner */
-  .banner {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-  }
-  
-  .banner h3 {
-    margin: 0;
-  }
-  
-  .banner p {
-    margin: 0.5rem 0 0 0;
-    font-size: 0.9rem;
-  }
-  
-  /* Tabs */
-  .tabs {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-    border-bottom: 2px solid #007bff;
-  }
-  
-  .tabs li {
-    padding: 0.8rem 1rem;
-    cursor: pointer;
-    color: #007bff;
-  }
-  
-  .tabs .active {
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px 5px 0 0;
-  }
-  
- 
-/* General Form Styling */
-.form-container {
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Card Section */
-  mat-card {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: none;
-  }
-  
-  /* Form Field Styling */
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  /* Headings Styling */
-  mat-card h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #333333;
-  }
-  
-  /* Buttons */
+
   button {
-    display: block;
     width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: #1976d2; /* Material blue color */
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    margin-bottom: 10px;
   }
-  
-  button:hover {
-    background-color: #155a9a;
+
+  button:last-child {
+    margin-bottom: 0;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .form-container {
-      padding: 15px;
-    }
-  
-    mat-card {
-      padding: 15px;
-    }
-  
-    mat-card h3 {
-      font-size: 1rem;
-    }
-  }
-  
+}

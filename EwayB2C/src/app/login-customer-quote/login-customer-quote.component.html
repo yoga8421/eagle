@@ -1,230 +1,54 @@
+<div class="header">
+    <img class="eagleLogo" src="assets/images/eagleLogo.webp" alt="ss">
+    <nav>
+      <a href="#">Overview</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">About</a>
+    </nav>
+    <button class="sign-in">Login</button>
+  </div>
 
-        <!--Get Insurance Start-->
-        <section class="get-insurance">
-            <div class="get-insurance-bg"
-                style="background-image: url(assets/images/backgrounds/get-insurance-bg.png);">
+
+    <title>Insurance Quote Page</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="left-content">
+                <img src= "assets/images/how-it-work-img.jpg" alt="Professional Woman" class="profile-image">
+                <!-- <p class="signature">Alesha Rose</p> -->
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="get-insurance__left">
-                            <div class="get-insurance__img wow slideInRight" data-wow-delay="100ms"
-                                data-wow-duration="2500ms">
-                                <img src="assets/images/get-insurance-img-1.png" alt="">
-                            </div>
-                            <div class="get-insurance__author">
-                                <p>Aleesha Rose</p>
-                            </div>
-                            <div class="get-insurance__circle"></div>
-                            <div class="get-insurance__shape-1 float-bob-x">
-                                <img src="assets/images/get-insurance-shape-1.png" alt="">
-                            </div>
-                        </div>
+            <div class="right-content">
+                <h1>Get an insurance quote to get started!</h1>
+                <!-- <div class="tabs">
+                    <button class="tab active">Home</button>
+                    <button class="tab">Vehicles</button>
+                    <button class="tab">Health</button>
+                    <button class="tab">Life</button>
+                </div> -->
+                <form class="quote-form">
+                    <!-- <input type="text" placeholder="Full name" class="form-input" required> -->
+                    <!-- <input type="mobilno" placeholder="Enter Mobile No" class="form-input" required> -->
+                    <!-- <select class="form-select" required>
+                        <option value="" disabled selected>Select type of insurance</option>
+                        <option value="home">Home</option>
+                        <option value="vehicles">Vehicles</option>
+                        <option value="health">Health</option>
+                        <option value="life">Life</option>
+                    </select> -->
+                    <div class="slider-container">
+                        <!-- <label for="balance-slider">Limits of Balance:</label> -->
+                        <!-- <input type="range" id="balance-slider" min="10000" max="100000" value="70000">
+                        <span id="balance-value">$70,000</span> -->
+                        <input type="mobilno" placeholder="Enter Mobile No" class="form-input" required>
                     </div>
-                    <div class="col-xl-6">
-                        <div class="get-insurance__right">
-                            <div class="section-title text-left">
-                                <div class="section-sub-title-box">
-                                    <p class="section-sub-title">Free quote</p>
-                                    <div class="section-title-shape-1">
-                                        <img src="assets/images/section-title-shape-1.png" alt="">
-                                    </div>
-                                    <div class="section-title-shape-2">
-                                        <img src="assets/images/section-title-shape-2.png" alt="">
-                                    </div>
-                                </div>
-                                <h2 class="section-title__title">Get an insurance quote <br> to get started!</h2>
-                            </div>
-                            <div class="get-insurance__tab">
-                                <div class="get-insurance__tab-box tabs-box">
-                                    <ul class="tab-buttons clearfix list-unstyled">
-                                        <li data-tab="#home2" class="tab-btn active-btn"><span>Home</span></li>
-                                        <li data-tab="#vehicles" class="tab-btn"><span>Vehicles</span></li>
-                                        <li data-tab="#health" class="tab-btn"><span>health</span></li>
-                                        <li data-tab="#life" class="tab-btn"><span>Life</span></li>
-                                    </ul>
-                                    <div class="tabs-content">
-                                        <!--tab-->
-                                        <div class="tab active-tab" id="home2">
-                                            <div class="get-insurance__content">
-                                                <form class="get-insurance__form">
-                                                    <div class="get-insurance__content-box">
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="text" placeholder="Full name" name="name">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="email" placeholder="Email address"
-                                                                name="email">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <select class="selectpicker"
-                                                                aria-label="Default select example">
-                                                                <option selected>Select type of insurance</option>
-                                                                <option value="1">Car insurance</option>
-                                                                <option value="2">Life insurance</option>
-                                                                <option value="3">Home insurance</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="get-insurance__progress">
-                                                        <div class="get-insurance__progress-single">
-                                                            <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                            </h4>
-                                                            <div class="get-insurance__progress-range">
-                                                                <input type="text" class="balance-range-slider"
-                                                                    data-hide-min-max="true" data-step="100"
-                                                                    data-from="70000" data-min="0" data-max="90000"
-                                                                    value="">
-                                                                <div class="get-insurance__balance-box">
-                                                                    <p class="get-insurance__balance">$<span></span></p>
-                                                                </div>
-                                                                <input type="hidden"
-                                                                    class="get-insurance__balance__input">
-                                                            </div><!-- /.get-insurance__progress-range -->
-                                                        </div>
-                                                    </div>
-                                                    <button type="submit" class="thm-btn get-insurance__btn">Get a Quote
-                                                        Now</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!--tab-->
-                                        <div class="tab" id="vehicles">
-                                            <div class="get-insurance__content">
-                                                <form class="get-insurance__form">
-                                                    <div class="get-insurance__content-box">
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="text" placeholder="Full name" name="name">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="email" placeholder="Email address"
-                                                                name="email">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <select class="selectpicker"
-                                                                aria-label="Default select example">
-                                                                <option selected>Select type of insurance</option>
-                                                                <option value="1">Car insurance</option>
-                                                                <option value="2">Life insurance</option>
-                                                                <option value="3">Home insurance</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="get-insurance__progress">
-                                                        <div class="get-insurance__progress-single">
-                                                            <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                            </h4>
-                                                            <div class="get-insurance__progress-range">
-                                                                <input type="text" class="balance-range-slider"
-                                                                    data-hide-min-max="true" data-step="100"
-                                                                    data-from="70000" data-min="0" data-max="90000"
-                                                                    value="">
-                                                                <div class="get-insurance__balance-box">
-                                                                    <p class="get-insurance__balance">$<span></span></p>
-                                                                </div>
-                                                                <input type="hidden"
-                                                                    class="get-insurance__balance__input">
-                                                            </div><!-- /.get-insurance__progress-range -->
-                                                        </div>
-                                                    </div>
-                                                    <button type="submit" class="thm-btn get-insurance__btn">Get a Quote
-                                                        Now</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!--tab-->
-                                        <div class="tab" id="health">
-                                            <div class="get-insurance__content">
-                                                <form class="get-insurance__form">
-                                                    <div class="get-insurance__content-box">
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="text" placeholder="Full name" name="name">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="email" placeholder="Email address"
-                                                                name="email">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <select class="selectpicker"
-                                                                aria-label="Default select example">
-                                                                <option selected>Select type of insurance</option>
-                                                                <option value="1">Car insurance</option>
-                                                                <option value="2">Life insurance</option>
-                                                                <option value="3">Home insurance</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="get-insurance__progress">
-                                                        <div class="get-insurance__progress-single">
-                                                            <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                            </h4>
-                                                            <div class="get-insurance__progress-range">
-                                                                <input type="text" class="balance-range-slider"
-                                                                    data-hide-min-max="true" data-step="100"
-                                                                    data-from="70000" data-min="0" data-max="90000"
-                                                                    value="">
-                                                                <div class="get-insurance__balance-box">
-                                                                    <p class="get-insurance__balance">$<span></span></p>
-                                                                </div>
-                                                                <input type="hidden"
-                                                                    class="get-insurance__balance__input">
-                                                            </div><!-- /.get-insurance__progress-range -->
-                                                        </div>
-                                                    </div>
-                                                    <button type="submit" class="thm-btn get-insurance__btn">Get a Quote
-                                                        Now</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <!--tab-->
-                                        <div class="tab" id="life">
-                                            <div class="get-insurance__content">
-                                                <form class="get-insurance__form">
-                                                    <div class="get-insurance__content-box">
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="text" placeholder="Full name" name="name">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <input type="email" placeholder="Email address"
-                                                                name="email">
-                                                        </div>
-                                                        <div class="get-insurance__input-box">
-                                                            <select class="selectpicker"
-                                                                aria-label="Default select example">
-                                                                <option selected>Select service</option>
-                                                                <option value="1">service One</option>
-                                                                <option value="2">service Two</option>
-                                                                <option value="3">service Three</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="get-insurance__progress">
-                                                        <div class="get-insurance__progress-single">
-                                                            <h4 class="get-insurance__progress-title">Limits of Balance:
-                                                            </h4>
-                                                            <div class="get-insurance__progress-range">
-                                                                <input type="text" class="balance-range-slider"
-                                                                    data-hide-min-max="true" data-step="100"
-                                                                    data-from="70000" data-min="0" data-max="90000"
-                                                                    value="">
-                                                                <div class="get-insurance__balance-box">
-                                                                    <p class="get-insurance__balance">$<span></span></p>
-                                                                </div>
-                                                                <input type="hidden"
-                                                                    class="get-insurance__balance__input">
-                                                            </div><!-- /.get-insurance__progress-range -->
-                                                        </div>
-                                                    </div>
-                                                    <button type="submit" class="thm-btn get-insurance__btn">Get a Quote
-                                                        Now</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <button type="submit" class="submit-button">Get a OTP Now</button>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
+    <!-- <script src="script.js"></script> -->
+
+

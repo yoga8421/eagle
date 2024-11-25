@@ -1,151 +1,132 @@
+<div class="header">
+  <img class="eagleLogo" src="assets/images/eagleLogo.webp" alt="ss">
+  <nav>
+    <a href="#">Overview</a>
+    <a href="#">Features</a>
+    <a href="#">Pricing</a>
+    <a href="#">About</a>
+  </nav>
+  <button class="sign-in">Login</button>
+</div>
 <div class="container">
-    <!-- Header -->
-    <header class="header">
-        <img class="eagleLogo" src="assets/images/eagleLogo.webp" alt="ss">
-      <nav class="menu">
-        <a href="#">Overview</a>
-        <a href="#">Features</a>
-        <a href="#">Pricing</a>
-        <a href="#">About</a>
-      </nav>
-      <div class="language">
-        <select>
-          <option>English</option>
-          <option>French</option>
+  <h2>Motor Insurance</h2>
+
+  <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit()">
+      <!-- Account Type Toggle -->
+      <div class="form-group account-type">
+        <label>Account Type:</label>
+        <div class="toggle-buttons">
+          <input
+            type="radio"
+            id="defaultAccount"
+            formControlName="accountType"
+            value="Default"
+          />
+          <label for="defaultAccount">Default</label>
+  
+          <input
+            type="radio"
+            id="corporateAccount"
+            formControlName="accountType"
+            value="Corporate"
+          />
+          <label for="corporateAccount">Corporate</label>
+        </div>
+      </div>
+    <!-- Customer Details -->
+    <fieldset>
+      <legend>Customer Details</legend>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <select id="title" formControlName="title">
+          <option value="">Select Title</option>
+          <option value="Mr">Mr</option>
+          <option value="Ms">Ms</option>
+          <option value="Mrs">Mrs</option>
         </select>
+      </div>
+
+      <div class="form-group">
+        <label for="customerName">Customer Name</label>
+        <input id="customerName" type="text" formControlName="customerName" placeholder="Search Customer Name" />
+      </div>
+
+      <div class="form-group">
+        <label for="code">Code</label>
+        <input id="code" type="text" formControlName="code" />
+      </div>
+
+      <div class="form-group">
+        <label for="mobileNo">Mobile No</label>
+        <input id="mobileNo" type="text" formControlName="mobileNo" />
+      </div>
+
+      <div class="form-group">
+        <label for="identityType">Identity Type</label>
+        <select id="identityType" formControlName="identityType">
+          <option value="">Select Identity Type</option>
+          <option value="Passport">Passport</option>
+          <option value="Driver's License">Driver's License</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="idNumber">ID Number</label>
+        <input id="idNumber" type="text" formControlName="idNumber" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" />
+      </div>
+    </fieldset>
+
+    <!-- Coverage Details -->
+    <fieldset>
+      <legend>Coverage Details</legend>
+
+      <div class="form-group">
+        <label for="policyStartDate">Policy Start Date</label>
+        <input id="policyStartDate" type="date" formControlName="policyStartDate" />
+      </div>
+
+      <div class="form-group">
+        <label for="policyEndDate">Policy End Date</label>
+        <input id="policyEndDate" type="date" formControlName="policyEndDate" />
+      </div>
+
+      <div class="form-group">
+        <label for="currency">Currency</label>
+        <select id="currency" formControlName="currency">
+          <option value="">Select Currency</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exchangeRate">Exchange Rate</label>
+        <input id="exchangeRate" type="number" formControlName="exchangeRate" />
+      </div>
+
+      <div class="form-group">
+        <label>Have Promo Code?</label>
+        <div>
+          <input type="radio" id="promoYes" formControlName="promoCode" value="Yes" />
+          <label for="promoYes">Yes</label>
+          <input type="radio" id="promoNo" formControlName="promoCode" value="No" />
+          <label for="promoNo">No</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Buttons -->
+    <div class="form-actions">
+      <button type="button" class="back-button">Back</button>
+      <button type="submit" class="proceed-button">Proceed</button>
     </div>
-        <!-- <button class="btn-logout">Log out</button> -->
-        <button class="sign-in">Login</button>
-      
-    </header>
+  </form>
+</div>
 
-<!-- Banner -->
-<div class="banner">
-    <h3>Please provide your customer details within 3 min</h3>
-    <p>
-      Ref. No: <span>EAG-MOT-06063</span> |
-      Make: <span>AUDI</span> |
-      Model: <span>A3 AUTO</span> |
-      Policy Days Count: <span>365 days</span> |
-      Total Premium: <span>10,801 MUR</span>
-    </p>
-  </div>
-
-  <!-- Tabs -->
-  <ul class="tabs">
-    <!-- <li><a href="#home">Home</a></li> -->
-    <li><a href="#Customer Info"></a></li>
-    <!-- <li><a href="Vehicle Details"></a></li>
-    <li><a href="Driver Details"></a></li>
-    <li><a href="Upload Documents"></a></li>
-    <li><a href="Payment Method"></a></li> -->
-    <li >Vehicle Details</li>
-    <li >Driver Details</li>
-    <li >Upload Documents</li>
-    <li >Payment Method</li>
-  </ul>
-
-  <div class="form-container">
-    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-      <!-- Personal Information Section -->
-      <mat-card>
-        <h3>Personal Information</h3>
-        
-        <mat-form-field appearance="fill">
-          <mat-label>Title</mat-label>
-          <mat-select formControlName="title">
-            <mat-option *ngFor="let option of titles" [value]="option">{{ option }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Occupation</mat-label>
-          <input matInput formControlName="occupation" />
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Identity Type</mat-label>
-          <mat-select formControlName="identityType">
-            <mat-option *ngFor="let type of identityTypes" [value]="type">{{ type }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Country Code</mat-label>
-          <input matInput formControlName="countryCode" />
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Mobile Number</mat-label>
-          <input matInput formControlName="mobile" type="tel" />
-        </mat-form-field>
-        
-        <mat-form-field appearance="fill">
-          <mat-label>Email ID</mat-label>
-          <input matInput formControlName="email" type="email" />
-        </mat-form-field>
-      </mat-card>
-  
-      <!-- Address Details Section -->
-      <mat-card>
-        <h3>Address Details</h3>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Country</mat-label>
-          <mat-select formControlName="country">
-            <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Region</mat-label>
-          <input matInput formControlName="region" />
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>District</mat-label>
-          <input matInput formControlName="district" />
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>P.O Box</mat-label>
-          <input matInput formControlName="poBox" />
-        </mat-form-field>
-      </mat-card>
-  
-      <!-- Additional Information Section -->
-      <mat-card>
-        <h3>Additional Information</h3>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Preferred Notification</mat-label>
-          <mat-select formControlName="notification">
-            <mat-option value="SMS">SMS</mat-option>
-            <mat-option value="Email">Email</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Business Type</mat-label>
-          <mat-select formControlName="businessType">
-            <mat-option value="Low">Low</mat-option>
-            <mat-option value="Medium">Medium</mat-option>
-            <mat-option value="High">High</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <br>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Tax Exempted</mat-label>
-          <mat-select formControlName="taxExempted">
-            <mat-option value="Yes">Yes</mat-option>
-            <mat-option value="No">No</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-card>
-  
-      <!-- Submit Button -->
-      <button mat-raised-button color="primary" type="submit">Proceed</button>
-    </form>
-  </div>
   
