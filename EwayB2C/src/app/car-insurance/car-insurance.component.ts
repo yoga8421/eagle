@@ -62,8 +62,8 @@ export class CarInsuranceComponent implements OnInit {
         dob: ['', Validators.required],
         occupation: ['', Validators.required],
       });
-      //this.encryptedValue='BIxEDbyzljyRQioO+7ARQqLPPKu+WfA4udDCuES1WxsdFNDHLT6r7YP540AG1KmAQNWgrJuNuFGsOcuW6fb7wSBLK3luky6H576Ecw1t8syqtnp5ItYS0h+3UK7FRNYugQljNKJF2pDsu4O4M7mAIxmgrtg15T7ShalOk7mhoznnIbl5WSM+lnONMWpyqPqNfmF8ZEfSm3gagf0a+eZBDDlCiwzw0Lpqw7jSLMH8YyzgmUzu868ix2X9oRLgN2vUJzsd2+KWPAU5wqbwC/eVpYmvEB0NHJZxWqX2ez4V9MaCkz1oCxqssGYUIw2efm+j';
-        this.encryptedValue='BIxEDbyzljwo1iea31wcJerd+8CHJtGiK5515u9KfTP3UpNpdbuVJD7kmQUmEaWeRJNDJ3S3qqa0Q1q5ccWwzuXidDTUb7eLQNCy8IL3ccyG6R3g13uuQywgCHKF9HcJF+Eil0N7SiyZ6es9cjIdjaAY7ZXRltrNh3yQ/60HRNx8ewBg88yoRk1g1Kc+EDDbqrEFyr0ZGDlSGcqBV6Vf5RSGF2QQSLYFqu0+42rJBXLNXgmDO8hePPb5rcdma2bqACtal7sb02nmR0r3YBaKBd9CFr5fqMGvl9bQUMswIvE=';
+      this.encryptedValue='BIxEDbyzljyRQioO+7ARQqLPPKu+WfA4udDCuES1WxsdFNDHLT6r7YP540AG1KmAQNWgrJuNuFGsOcuW6fb7wSBLK3luky6H576Ecw1t8syqtnp5ItYS0h+3UK7FRNYugQljNKJF2pDsu4O4M7mAIxmgrtg15T7ShalOk7mhoznnIbl5WSM+lnONMWpyqPqNfmF8ZEfSm3gagf0a+eZBDDlCiwzw0Lpqw7jSLMH8YyzgmUzu868ix2X9oRLgN2vUJzsd2+KWPAU5wqbwC/eVpYmvEB0NHJZxWqX2ez4V9MaCkz1oCxqssGYUIw2efm+j';
+        // this.encryptedValue='BIxEDbyzljwo1iea31wcJerd+8CHJtGiK5515u9KfTP3UpNpdbuVJD7kmQUmEaWeRJNDJ3S3qqa0Q1q5ccWwzuXidDTUb7eLQNCy8IL3ccyG6R3g13uuQywgCHKF9HcJF+Eil0N7SiyZ6es9cjIdjaAY7ZXRltrNh3yQ/60HRNx8ewBg88yoRk1g1Kc+EDDbqrEFyr0ZGDlSGcqBV6Vf5RSGF2QQSLYFqu0+42rJBXLNXgmDO8hePPb5rcdma2bqACtal7sb02nmR0r3YBaKBd9CFr5fqMGvl9bQUMswIvE=';
          this.getDecryptData();
     }
   async getDecryptData(){

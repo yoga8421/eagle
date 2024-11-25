@@ -1,12 +1,9 @@
 {
-        "ApiUrl1": "http://192.168.1.42:8084/",
-         "MotorApiUrl": "http://192.168.1.42:8085/",
-         "CommonApiUrl": "http://192.168.1.42:8086/",
-         "CustomCommonApiUrl": "http://192.168.1.42:8086/",
-         "ExcelUrl": "http://192.168.1.42:8084/",
-         "PreExceptionUrl":"https://madison.revioncloud.com/WhatsAppChatApi/",
-         "CustomApiUrl1": "http://192.168.1.42:8084/",
-        "ReInsurance":"https://apps.alliance.co.tz/EwayAdminApiLive/",
-        "Request URL": "http://192.168.1.42:8086/otp/generate/"
-  }
- 
+      "ApiUrl1": "http://102.69.166.162:8086/EwayAdminApi/",
+      "MotorApiUrl": "http://102.69.166.162:8086/EwayMotorApi/",
+      "CommonApiUrl": "http://102.69.166.162:8086/EwayCommonApi/",
+      "CustomCommonApiUrl": "http://102.69.166.162:8086/EwayCommonApi/",
+      "ExcelUrl": "http://102.69.166.162:8086/EwayAdminApi/",
+      "PreExceptionUrl":"http://102.69.166.162:8086/WhatsAppApiLive/",
+      "CustomApiUrl1": "http://102.69.166.162:8086/EwayAdminApi/"
+}
